@@ -6,7 +6,7 @@ public enum TipoAvion {
     CARGA("AvionDeCarga"),
     MILITAR("AvionMilitar");
 
-    private String claseAvion;
+    private final String claseAvion;
 
     TipoAvion(String claseAvion) {
         this.claseAvion = claseAvion;

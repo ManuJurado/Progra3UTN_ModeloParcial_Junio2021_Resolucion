@@ -1,15 +1,23 @@
 package Aviones;
 import java.util.List;
+import java.util.ArrayList;
 
 // AvionComercial.java
 public class AvionComercial extends Avion {
-    private int cantidadAzafatas;
-    private List<Servicios> servicios;
+    private final int cantidadAzafatas;
+    private static final List<Servicios> SERVICIOS = List.of(
+            Servicios.WIFI,
+            Servicios.COMIDA,
+            Servicios.ENTRETENIMIENTO,
+            Servicios.ASIENTO_RECLINABLE,
+            Servicios.BEBIDAS
+    );
+    private final List<Servicios> servicios;
 
-    public AvionComercial(int cantidadAzafatas, List<Servicios> servicios) {
+    public AvionComercial() {
         super(TipoAvion.COMERCIAL); // Usamos el enum TipoAvion
-        this.cantidadAzafatas = cantidadAzafatas;
-        this.servicios = servicios;
+        this.cantidadAzafatas = 5;
+        this.servicios = new ArrayList<>(SERVICIOS); // Usar la constante SERVICIOS
     }
 
     @Override
@@ -25,6 +33,15 @@ public class AvionComercial extends Avion {
     @Override
     public void volar() {
         System.out.println("El avión comercial está volando.");
+    }
+
+    @Override
+    public String toString() {
+        return "AvionComercial{" +
+                "cantidadAzafatas=" + cantidadAzafatas +
+                ", servicios=" + servicios +
+                ", tipoAvion=" + tipoAvion +
+                '}';
     }
 
     // Métodos adicionales para AvionComercial

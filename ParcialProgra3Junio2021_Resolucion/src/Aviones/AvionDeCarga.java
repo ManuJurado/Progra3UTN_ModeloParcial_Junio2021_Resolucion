@@ -1,15 +1,16 @@
 package Aviones;
 
+import java.util.Collections;
 import java.util.List;
 
 public class AvionDeCarga extends Avion {
-    private double capacidadKilos;
-    private List<String> productosTransportados;
+    private final double capacidadKilos;
+    private final List<String> productosTransportados;
 
-    public AvionDeCarga(double capacidadKilos, List<String> productosTransportados) {
+    public AvionDeCarga() {
         super(TipoAvion.CARGA); // Llama al constructor de Avion con el tipo de avión
-        this.capacidadKilos = capacidadKilos;
-        this.productosTransportados = productosTransportados;
+        this.capacidadKilos = 500;
+        this.productosTransportados = Collections.singletonList(" ");
     }
 
     @Override

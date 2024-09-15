@@ -1,13 +1,13 @@
 package Aviones;
 
 public class AvionPrivado extends Avion {
-    private boolean tieneJacuzzi;
-    private String claveWifi;
+    private final boolean tieneJacuzzi;
+    private final String claveWifi;
 
-    public AvionPrivado(boolean tieneJacuzzi, String claveWifi) {
+    public AvionPrivado() {
         super(TipoAvion.PRIVADO); // Llama al constructor de Avion con el tipo de avión
-        this.tieneJacuzzi = tieneJacuzzi;
-        this.claveWifi = claveWifi;
+        this.tieneJacuzzi = true;
+        this.claveWifi = "clavePrivado";
     }
 
     @Override
@@ -31,7 +31,7 @@ public class AvionPrivado extends Avion {
         System.out.println("Clave de Wifi: " + claveWifi);
     }
 
-    // Método específico para ver el mundial
+    // Metodo específico para ver el mundial
     public boolean puedeVerMundial() {
         return true; // Siempre es verdadero para los aviones privados
     }
